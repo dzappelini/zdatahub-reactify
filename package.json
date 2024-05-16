@@ -1,0 +1,17 @@
+{
+  "name": "zdatahub-reactify",
+  "version": "1.0.0",
+  "description": "**ZDataHub Reactify** é um programa de pesquisa de satisfação open-source desenvolvido em JavaScript. Este projeto tem como objetivo fornecer uma solução eficiente e amigável para a coleta e análise de feedback de clientes em postos de combustíveis e lojas de conveniência.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
