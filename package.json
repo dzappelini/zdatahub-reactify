@@ -4,16 +4,22 @@
   "description": "**ZDataHub Reactify** é um programa de pesquisa de satisfação open-source desenvolvido em JavaScript. Este projeto tem como objetivo fornecer uma solução eficiente e amigável para a coleta e análise de feedback de clientes em postos de combustíveis e lojas de conveniência.",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
+    "services:up": "docker compose -f infra/compose.yaml up -d",
+    "services:stop": "docker compose -f infra/compose.yaml stop",
+    "services:down": "docker compose -f infra/compose.yaml down",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "migration:create": "node-pg-migrate -m infra/migrations create",
+    "migration:up": "node-pg-migrate -m infra/migrations --envPath .env.development up"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.4.5",
     "next": "^13.1.6",
+    "node-pg-migrate": "^7.3.2",
     "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
